@@ -1,15 +1,15 @@
 /* global $ XMLHttpRequest */
-let words = null;
-
-function parseWords (re) {
-  words.forEach(function (word) {
-    if (re.test(word)) {
-      $('<li>' + word + '</li>').appendTo($('#output'));
-    }
-  });
-}
-
 $(function () {
+  let words = null;
+
+  function parseWords (re) {
+    words.forEach(function (word) {
+      if (re.test(word)) {
+        $('<li>' + word + '</li>').appendTo($('#output'));
+      }
+    });
+  }
+
   $('form').on('submit', function (ev) {
     ev.preventDefault();
     $('#output').html('');
