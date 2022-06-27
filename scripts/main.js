@@ -2,10 +2,10 @@
 let words = null;
 
 function parseWords (re) {
-  words.filter(function (x) {
-    return re.test(x);
-  }).map(function (word) {
-    return $('<li>' + word + '</li>').appendTo($('#output'));
+  words.forEach(function (word) {
+    if (re.test(word)) {
+      $('<li>' + word + '</li>').appendTo($('#output'));
+    }
   });
 }
 
