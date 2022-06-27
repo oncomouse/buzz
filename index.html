@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Spelling Buzz: Help with Spelling Bee</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/cutestrap@2.0.0-4/dist/css/cutestrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="blob:https://www.cutestrap.com/5a69f3a5-56ff-4741-bc8d-29715208d70c"
+			rel="stylesheet"
+			type="text/css"
+		/>
+	</head>
+	<body>
+		<hgroup>
+			<h1>Spelling Buzz</h1>
+			<h2>Help with Spelling Bee</h2>
+		</hgroup>
+		<form>
+			<label class="field">
+				<input
+					type="text"
+					id="yellow"
+					minlength="1"
+					maxlength="1"
+					pattern="^[A-Za-z]$"
+				/>
+				<span class="label">Yellow Letter</span>
+			</label>
+			<label class="field">
+				<input
+					type="text"
+					id="grey"
+					minlength="6"
+					maxlength="6"
+					pattern="^[A-Za-z]+$"
+				/>
+				<span class="label">Grey letters</span>
+			</label>
+			<input type="submit" class="button" value="Get Words" />
+		</form>
+		<ul id="output"></ul>
+		<script src="https://cdn.jsdelivr.net/npm/cash-dom@8.1.1/dist/cash.min.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
