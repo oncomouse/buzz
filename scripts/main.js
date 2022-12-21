@@ -1,33 +1,33 @@
 /* global $ XMLHttpRequest */
 $(function () {
-  let words = null;
+  let words = null
 
   function parseWords (re) {
     words.forEach(function (word) {
       if (re.test(word)) {
-        $('<li>' + word + '</li>').appendTo($('#output'));
+        $('<li>' + word + '</li>').appendTo($('#output'))
       }
-    });
+    })
   }
 
   $('form').on('submit', function (ev) {
-    ev.preventDefault();
-    $('#output').html('');
-    const yellowLetter = $('#yellow')[0].value.toLowerCase();
-    const greyLetters = $('#grey')[0].value.toLowerCase();
-    const letters = '[' + yellowLetter + greyLetters + ']';
-    const re = new RegExp('^' + letters + '*' + yellowLetter + letters + '*$');
+    ev.preventDefault()
+    $('#output').html('')
+    const yellowLetter = $('#yellow')[0].value.toLowerCase()
+    const greyLetters = $('#grey')[0].value.toLowerCase()
+    const letters = '[' + yellowLetter + greyLetters + ']'
+    const re = new RegExp('^' + letters + '*' + yellowLetter + letters + '*$')
     if (words === null) {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'words.json');
-      xhr.send();
+      const xhr = new XMLHttpRequest()
+      xhr.open('GET', 'words.json')
+      xhr.send()
       xhr.onload = function () {
-        words = JSON.parse(xhr.response);
-        parseWords(re);
-      };
+        words = JSON.parse(xhr.response)
+        parseWords(re)
+      }
     } else {
-      parseWords(re);
+      parseWords(re)
     }
-    return false;
-  });
-});
+    return false
+  })
+})
