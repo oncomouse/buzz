@@ -5,7 +5,7 @@ $(function () {
   function parseWords (re) {
     words.forEach(function (word) {
       if (re.test(word)) {
-        $('<li>' + word + '</li>').appendTo($('#output'))
+        $('<li>' + word + ' (' + word.length + ')</li>').appendTo($('#output'))
       }
     })
   }
